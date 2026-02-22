@@ -1,0 +1,108 @@
+/* LogicPy v2 - Light Theme App Styles */
+
+/* Ensure full height layout */
+html, body, #root {
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Monaco editor customizations for light theme */
+.monaco-editor {
+  border-radius: var(--radius);
+}
+
+/* Smooth transitions for panels */
+[data-panel] {
+  transition: flex-basis 0.1s ease-out;
+}
+
+/* Focus styles */
+*:focus-visible {
+  outline: 2px solid hsl(var(--primary));
+  outline-offset: 2px;
+}
+
+/* Selection color */
+::selection {
+  background-color: hsl(var(--primary) / 0.2);
+}
+
+/* Prevent text selection on UI elements */
+button, [role="button"] {
+  user-select: none;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Code font stack */
+.font-mono {
+  font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', 'Monaco', 'Courier New', monospace;
+}
+
+/* Animation for loading states */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    hsl(var(--muted)) 25%,
+    hsl(var(--muted-foreground) / 0.3) 50%,
+    hsl(var(--muted)) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Toast notifications styling */
+[data-sonner-toast] {
+  font-family: inherit !important;
+}
+
+/* Card hover effects */
+.card-hover {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px hsl(var(--foreground) / 0.08);
+}
+
+/* Badge animations */
+@keyframes badge-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.badge-pulse {
+  animation: badge-pulse 2s ease-in-out infinite;
+}
+
+/* Progress bar styling */
+progress {
+  border-radius: var(--radius);
+}
+
+progress::-webkit-progress-bar {
+  background-color: hsl(var(--muted));
+  border-radius: var(--radius);
+}
+
+progress::-webkit-progress-value {
+  background-color: hsl(var(--primary));
+  border-radius: var(--radius);
+}
