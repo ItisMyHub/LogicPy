@@ -24,6 +24,7 @@ const defaultProgress: UserProgress = {
   completedExamples: [],
   completedChallenges: [],
   unlockedFeatures: ['basic-translation'],
+  conceptsExplored: [],
   streakDays: 1,
   lastActiveDate: new Date().toISOString().split('T')[0]
 };
